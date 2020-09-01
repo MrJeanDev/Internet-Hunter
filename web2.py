@@ -1,17 +1,13 @@
 import socket, whois
 
 def web_service():
-    foda = 11111111111111111111111111111111111111111111
-    print(foda)
+    print()
 
 def crimeflaredb():
-    foda = 11111111111111111111111111111111111111111111
-    print(foda)
+    print()
 
 def whois():
-    foda = 11111111111111111111111111111111111111111111
-    print(foda)
+    print()
 
 def virustotal():
-    foda = 11111111111111111111111111111111111111111111
-    print(foda)
+    print()

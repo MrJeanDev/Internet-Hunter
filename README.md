@@ -1,6 +1,6 @@
 # Internet-Hunter
 '''
-Objetivo: Puxar informaçoes basicas de ip, web e geolocalização do alvo.
+Objetivo: Puxar informaçoes basicas de ip, web e possivel geolocalização do alvo.
 '''
 
 Farei uma serie de 4 videos explicando cada parte. De iniciante a intermediario no.

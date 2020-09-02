@@ -1,13 +1,16 @@
-import socket, whois
+import socket, whois, geoip2, nmap3
 
-def web_service():
+def dns(web)
+    ip_addr = socket.gethostbyname(web)
+
+def web_service(web):
     print()
 
-def crimeflaredb():
+def maxmind():
     print()
 
-def whois():
+def crimeflaredb(web):
     print()
 
-def virustotal():
+def whois(web):
     print()

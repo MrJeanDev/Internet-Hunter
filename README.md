@@ -6,8 +6,9 @@ Objetivo: Puxar informaçoes basicas de ip, web e geolocalização do alvo.
 Farei uma serie de 4 videos explicando cada parte. De iniciante a intermediario no.
 YouTube: https://www.youtube.com/c/JeanDev
 
+---------------------------------------------
 
-Como usar o script
+Como usar o script:
 
 ---------------------------------------------
 

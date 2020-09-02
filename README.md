@@ -1,9 +1,10 @@
 # Internet-Hunter
-
-Objetivo: para puxar informaçoes basicas de ip, web e geolocalização ip.
-
-YouTube: https://www.youtube.com/c/JeanDev
+'''
+Objetivo: Puxar informaçoes basicas de ip, web e geolocalização do alvo.
+'''
 Farei uma serie de 4 videos explicando cada parte. De iniciante a avançado
+YouTube: https://www.youtube.com/c/JeanDev
+
 
 Como usar o script
 

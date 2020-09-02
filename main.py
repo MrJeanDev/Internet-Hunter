@@ -17,37 +17,29 @@ decisão = {
 def ip():
     try:
         ip1 = input("Digite seu ip")
-        whois = ip2.whois(ip1)
+
         ping = ip2.ping(ip1)
         traceroute = ip2.traceroute(ip1)
-        nmap = ip2.nmap(ip1)
-        shodan0 = input("Aceita usar shodan? escreva Y\nSe não apenas digite enter")
-        if shodan0 == "\n":
-            api = input("Digite sua API token")
-            shodan = ip2.shodan(api,ip2)
-            relatorio.relatorio_ip(user)
-        else:
-            relatorio.relatorio_ip(user)
+        subdomains, version_result, ports = ip2.nmap(ip1)
+        dns = ip2.dns(ip1)
+
+        relatorio.relatorio_ip(user)
     except:
         print("Digitou ip errado, escreve denovo")
         ip()
 
 def web():
     web1 = input("Digite o site. Sera melhor sem .www")
-    web_service = web2.web_service(web1)
-    crimeflaredb = web2.crimeflaredb(web1)
-    whois = web2.whois(web1)
-    virustotal0 = input("Aceita usar virustotal para site phishing? escreva Y\nSe não apenas digite enter")
-    if virustotal0 == Y or y:
-        api = input("Digite sua API token")
-        virustotal = web2.virustotal(api,web1)
-        relatorio.relatorio_web(user)
-    else:
-        relatorio.relatorio_web(user)
+    web_service = web2.web_service(web)
+    crimeflaredb = web2.crimeflaredb(web)
+    whois = web2.whois(web)
+    ip_addr = web2.dns(web)
+    maxmind = web2.maxmind(web)
+    relatorio.relatorio_web(user)
 
 def geoip():
     geoip = input("Digite o ip")
-    city, country, anonymous, precision, domain = geoip3.exec()
+    city, country, anonymous, latitude, longitude, domain, postalcode = geoip3.exec(geoip)
     relatorio.relatorio_geoip(user)
 
 def Options(user,opt):

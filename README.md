@@ -6,6 +6,9 @@ Objetivo: Puxar informaçoes basicas de ip, web e possivel geolocalização do a
 Farei uma serie de 4 videos explicando cada parte. De iniciante a intermediario no.
 YouTube: https://www.youtube.com/c/JeanDev
 
+E postarei algumas coisas no instagram.
+Instagram: https://www.instagram.com/jean1dev/
+
 ---------------------------------------------
 
 Como usar o script:

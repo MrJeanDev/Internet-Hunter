@@ -4,7 +4,7 @@ import geoip3
 import web2
 import os
 import ip2
-#import threading
+#import threading talvez update futuro
 import relatorio
 
 inicialização = (argv[0],argv[1])
@@ -18,36 +18,50 @@ def ip():
     try:
         ip1 = input("Digite seu ip")
 
-        ping = ip2.ping(ip1)
+        píng = ip2.ping(ip)
         traceroute = ip2.traceroute(ip1)
-        subdomains, version_result, ports = ip2.nmap(ip1)
+        version_result, ports = ip2.nmap(ip1)
         dns = ip2.dns(ip1)
+        data.ip(ping ,traceroute,version_result, ports, dns)
 
-        relatorio.relatorio_ip(user)
+        relatorio.relatorio_ip(relato, user)
     except:
         print("Digitou ip errado, escreve denovo")
         ip()
 
 def web():
     web1 = input("Digite o site. Sera melhor sem .www")
-    web_service = web2.web_service(web)
-    crimeflaredb = web2.crimeflaredb(web)
-    whois = web2.whois(web)
-    ip_addr = web2.dns(web)
-    maxmind = web2.maxmind(web)
-    relatorio.relatorio_web(user)
+    web_service = web2.web_service(web1)
+    whois = web2.whois(web1)
+    ip_addr, subdomain = web2.dns(web1)
+    web_on = web2.web_on(web1)
+
+    relato = data.web(web_service,whois,ip_addr,web_on)
+
+    relato_decisão = input("Quer um 'relatorio'? Escreve Y\n Se não apenas só apenas aperte enter")
+    if relato_decisão == "Y" or "y":
+        relatorio.relatorio_web(relato, user)
+    else:
+        print("Adeus, e obrigado por usar o programa")
 
 def geoip():
     geoip = input("Digite o ip")
     city, country, anonymous, latitude, longitude, domain, postalcode = geoip3.exec(geoip)
-    relatorio.relatorio_geoip(user)
+    if  anonymous == True:
+        anonymo = geoip3.anonymous(ip)
+        data.geoip(geoip, city, country, anonymous, latitude, longitude, domain, postalcode, anonymo)
+    else:
+        data.geoip0(geoip, city, country, anonymous, latitude, longitude, domain, postalcode)
+        relato_decisão = input("Quer um 'relatorio'? Escreve Y\n Se não apenas só apenas aperte enter")
+        if relato_decisão == "Y" or "y":
+            relatorio.relatorio_geoip(relato,user)
 
 def Options(user,opt):
     print()
     print("-" * 20)
     print("\nBem vindo {}!\n".format(user))
     print("-" * 20)
-    
+
     if opt in decisão:
         decis = decisão[opt]
         print('''

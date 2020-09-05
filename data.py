@@ -1,7 +1,7 @@
 import json
 
 def web(web_service,whois,ip_addr,web_on):
-    print()
+    print(web_service)
 
 def ip(ping ,traceroute,version_result, ports, dns):
     print()

@@ -19,6 +19,8 @@ pip3 install -r requeriments.txt
 
 python3 main.py run
 
+sudo apt install nmap
+
 ---------------------------------------------
 
 Depois so seguir escolhendo as opções

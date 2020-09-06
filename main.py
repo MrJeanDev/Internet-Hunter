@@ -1,6 +1,7 @@
 #codinng: utf-8
 from sys import argv
 import geoip3
+import data
 import web2
 import os
 import ip2
@@ -8,6 +9,7 @@ import ip2
 import relatorio
 
 inicialização = (argv[0],argv[1])
+
 decisão = {
         1 :"Analise Web",
         2 :"Analise Ip",
@@ -15,22 +17,17 @@ decisão = {
     }
 
 def ip():
-    try:
-        ip1 = input("Digite seu ip")
+    ip1 = input("Digite seu ip: ")
+    print()
 
-        píng = ip2.ping(ip)
-        traceroute = ip2.traceroute(ip1)
-        version_result, ports = ip2.nmap(ip1)
-        dns = ip2.dns(ip1)
-        data.ip(ping ,traceroute,version_result, ports, dns)
+    version_result, ports = ip2.nmap(ip1)
+    dns = ip2.dns(ip1)
+    data.ip(version_result, ports, dns)
 
-        relatorio.relatorio_ip(relato, user)
-    except:
-        print("Digitou ip errado, escreve denovo")
-        ip()
+    relatorio.relatorio_ip(relato, user)
 
 def web():
-    web1 = input("Digite o site. Sera melhor sem .www")
+    web1 = input("Digite o site. Sera melhor sem .www e sem espaço\nSite: ")
     web_service = web2.web_service(web1)
     whois = web2.whois(web1)
     ip_addr, subdomain = web2.dns(web1)

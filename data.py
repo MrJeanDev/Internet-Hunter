@@ -7,21 +7,21 @@ def web(web_service,whois,ip_addr,web_on):
     print("-" * 20)
     print(web_on)
 
-def ip(version_result, ports, dns):
+def ip(version_result, whois, dns):
     print(version_result)
     print("-" * 20)
-    print(ports)
+    print(whois)
     print("-" * 20)
     print(dns)
 
 def geoip(city, country, latitude, longitude, postalcode):
-    print(city)
+    print("Cidade: {}".format(city))
     print("-" * 20)
-    print(country)
+    print("País: {}".format(country))
     print("-" * 20)
-    print(latitude)
+    print("Latitude: {}".format(latitude))
     print("-" * 20)
-    print(longitude)
+    print("Longitude: {}".format(longitude))
     print("-" * 20)
-    print(postalcode)
+    print("Postal Code: {}".format(postalcode))
     print("-" * 20)

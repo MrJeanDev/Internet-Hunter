@@ -16,26 +16,45 @@ decisão = {
         3 :"Rastreamento Ip"
     }
 
-def ip():
-    ip1 = input("Digite seu ip: ")
-    print()
-
-    version_result, ports = ip2.nmap(ip1)
-    dns = ip2.dns(ip1)
-    data.ip(version_result, ports, dns)
-
-    relatorio.relatorio_ip(relato, user)
-
 def web():
+    print("-" * 20)
     web1 = input("Digite o site. Sera melhor sem .www e sem espaço\nSite: ")
-    web_service = web2.web_service(web1)
-    whois = web2.whois(web1)
-    ip_addr, subdomain = web2.dns(web1)
-    web_on = web2.web_on(web1)
+    print("-" * 20)
 
+    print("Analisando o site. Espere um pouco")
+    web_service = web2.web_service(web1)
+    print("[X]Web Service")
+    whois = web2.whois(web1)
+    print("[X]Whois")
+    ip_addr, subdomain = web2.dns(web1)
+    print("[X]IP\n[X]Subdomains")
+    web_on = web2.web_on(web1)
+    print("[X]Web On")
     relato = data.web(web_service,whois,ip_addr,web_on)
 
-    relato_decisão = input("Quer um 'relatorio'? Escreve Y\n Se não apenas só apenas aperte enter")
+    print("-" * 20)
+    relato_decisão = input("Quer um 'relatorio'? Escreve Y\nSe não apenas só apenas aperte enter: ")
+    print("-" * 20)
+    if relato_decisão == "Y" or "y":
+        relatorio.relatorio_web(relato, user)
+    else:
+        print("Adeus, e obrigado por usar o programa")
+
+def ip():
+    print("-" * 20)
+    ip1 = input("Digite seu ip: ")
+    print("-" * 20)
+
+    print("Analisando o Ip")
+    version_result, ports = ip2.nmap(ip1)
+    print("[X]Portas\n[X]Resultado das versões")
+    dns = ip2.dns(ip1)
+    print("[X]Dns Resolve")
+    relato = data.ip(version_result, ports, dns)
+
+    print("-" * 20)
+    relato_decisão = input("Quer um 'relatorio'? Escreve Y\nSe não apenas só apenas aperte enter: ")
+    print("-" * 20)
     if relato_decisão == "Y" or "y":
         relatorio.relatorio_web(relato, user)
     else:
@@ -54,7 +73,6 @@ def geoip():
             relatorio.relatorio_geoip(relato,user)
 
 def Options(user,opt):
-    print()
     print("-" * 20)
     print("\nBem vindo {}!\n".format(user))
     print("-" * 20)
@@ -99,7 +117,8 @@ $   $  8  8     d  d8        `b  d    '8  b
             geoip()
 for iniciar in inicialização:
     if iniciar == "run":
-        user = input("\nDigite nome de usuario\nName: ")
-        print()
+        print("-" * 20)
+        user = input("Digite nome de usuario\nName: ")
+        print("-" * 20)
         opt = int(input("1. Analise web.\n2. Analise ip\n3. Geoip\ndigite o numero: "))
         Options(user,opt)

@@ -61,14 +61,25 @@ def ip():
         print("Adeus, e obrigado por usar o programa")
 
 def geoip():
-    geoip = input("Digite o ip")
-    city, country, anonymous, latitude, longitude, domain, postalcode = geoip3.exec(geoip)
+    print("-" * 20)
+    geoip = input("Digite o ip: ")
+    print("-" * 20)
+
+    country,state,city,postal_code,latitude,longitude = geoip3.city(geoip)
+    print("[X]Informaçoes do ip")
+    domain = geoip3.domain(geoip)
+    print("[X]Dominio")
+    anonymous = geoip3.anonymous(geoip)
     if  anonymous == True:
-        anonymo = geoip3.anonymous(ip)
+        anonymo = geoip3.anonymous_True(ip)
+        print("[X]Anonymous")
         data.geoip(geoip, city, country, anonymous, latitude, longitude, domain, postalcode, anonymo)
     else:
-        data.geoip0(geoip, city, country, anonymous, latitude, longitude, domain, postalcode)
+        print("[X]Anonymous")
+        relato = data.geoip0(geoip, city, country, anonymous, latitude, longitude, domain, postalcode)
+        print("-" * 20)
         relato_decisão = input("Quer um 'relatorio'? Escreve Y\n Se não apenas só apenas aperte enter")
+        print("-" * 20)
         if relato_decisão == "Y" or "y":
             relatorio.relatorio_geoip(relato,user)
 

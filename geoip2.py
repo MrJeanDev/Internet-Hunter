@@ -1,7 +1,7 @@
 from geoip2.database import Reader
 
 def city(geoip):
-    with Reader('/path/to/GeoLite2-City.mmdb') as reader:
+    with Reader('/Database/GeoLite2-City.mmdb') as reader:
         response = reader.city(geoip)
         country = response.country.name
         state = response.subdivisions.most_specific.name
@@ -10,13 +10,14 @@ def city(geoip):
         latitude = response.location.latitude
         longitude = response.location.longitude
         return(country,state,city,postal_code,latitude,longitude)
+'''
 def domain(geoip):
-    with Reader('/path/to/GeoIP2-Domain.mmdb') as reader:
+    with Reader('/Database/GeoIP2-Domain.mmdb') as reader:
         response = reader.domain(geoip)
         domain = response.domain
         return(domain)
 def anonymous(geoip):
-    with Reader('/path/to/GeoIP2-Anonymous-IP.mmdb') as reader:
+    with Reader('./Database/GeoIP2-Anonymous-IP.mmdb') as reader:
         response = reader.anonymous_ip(geoip)
         anonymous = response.is_anonymous
         return(anonymous)
@@ -36,3 +37,4 @@ def anonymous_True(geoip):
             return("PROXY")
         else:
             return("TOR")
+'''

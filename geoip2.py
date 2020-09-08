@@ -1,7 +1,7 @@
 from geoip2.database import Reader
 
 def city(geoip):
-    with Reader('/Database/GeoLite2-City.mmdb') as reader:
+    with Reader('./Databases/GeoLite2-City.mmdb') as reader:
         response = reader.city(geoip)
         country = response.country.name
         state = response.subdivisions.most_specific.name

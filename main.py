@@ -46,11 +46,12 @@ def ip():
     print("-" * 20)
 
     print("Analisando o Ip")
-    version_result, ports = ip2.nmap(ip1)
+    version_result = ip2.nmap(ip1)
+    whois = ip2.whois(ip1)
     print("[X]Portas\n[X]Resultado das versões")
     dns = ip2.dns(ip1)
     print("[X]Dns Resolve")
-    relato = data.ip(version_result, ports, dns)
+    relato = data.ip(version_result, whois, dns)
 
     print("-" * 20)
     relato_decisão = input("Quer um 'relatorio'? Escreve Y\nSe não apenas só apenas aperte enter: ")
@@ -66,11 +67,10 @@ def geoip():
     print("-" * 20)
 
     country,state,city,postal_code,latitude,longitude = geoip3.city(geoip)
-    print("[X]Informaçoes do ip da database")
 
-    relato = data.geoip(city, country, latitude, longitude, postalcode)
-    print("-" * 20)
-    relato_decisão = input("Quer um 'relatorio'? Escreve Y\n Se não apenas só apenas aperte enter")
+    relato = data.geoip(city, country, latitude, longitude, postal_code)
+    print()
+    relato_decisão = input("Quer um 'relatorio'? Escreve Y\nSenão apenas só apenas aperte enter")
     print("-" * 20)
     if relato_decisão == "Y" or "y":
         relatorio.relatorio_geoip(relato,user)
@@ -78,7 +78,7 @@ def geoip():
         print("Obrigado por usar o programa")
 
 def Options(user,opt):
-    print("-" * 20)
+
     print("\nBem vindo {}!\n".format(user))
     print("-" * 20)
 

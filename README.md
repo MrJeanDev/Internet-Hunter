@@ -21,7 +21,7 @@ pip3 install -r requirements.txt
 ```
 pip3 install -r requeriments.txt
 sudo apt install nmap
-python3 main.py run
+python3 main.py
 ```
 ## Sobre GeoIp2
 Se der erro de arquivo não encontrado. Terá que ir no maxmind e baixar database city. O lite. E botar na pasta Databases.

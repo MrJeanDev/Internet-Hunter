@@ -45,7 +45,7 @@ Sistema operacional usado para teste.
 
 ## Extras
 Tera aulas e coisas para aprensentar futuramente. Postarei no YouTube
-´´´
+```
 youtube.com/jeandev/
 ```
 

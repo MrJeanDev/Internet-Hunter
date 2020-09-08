@@ -1,4 +1,5 @@
 # Internet-Hunter V1.0 Demo
+* Ainda em desenvolvimento
 
 Internet-Hunter é um programa em desenvolvimento, sendo um projeto pessoal visando em Iot (internet das coisas). E com ideias de dar aulas, e programa para puxar informações web, ip e geoip.
 
@@ -49,4 +50,4 @@ Tera aulas e coisas para aprensentar futuramente. Postarei no YouTube
 youtube.com/jeandev/
 ```
 
-* Ainda em desenvolvimento
+

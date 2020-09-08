@@ -8,7 +8,7 @@ import ip2
 #import threading talvez update futuro
 import relatorio
 
-inicialização = (argv[0],argv[1])
+inicialização = (True
 
 decisão = {
         1 :"Analise Web",
@@ -121,7 +121,7 @@ $   $  8  8     d  d8        `b  d    '8  b
         else:
             geoip()
 for iniciar in inicialização:
-    if iniciar == "run":
+    if iniciar == True:
         print("-" * 20)
         user = input("Digite nome de usuario\nName: ")
         print("-" * 20)

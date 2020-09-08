@@ -1,8 +1,8 @@
 def relatorio_geoip(relato,user):
-    print()
+    print("Ainda esta sendo desenvolvido essa opção")
 
 def relatorio_web(relato,user):
-    print()
+    print("Ainda esta sendo desenvolvido essa opção")
 
 def relatorio_ip(relato,user):
-    print()
+    print("Ainda esta sendo desenvolvido essa opção")
